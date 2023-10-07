@@ -1,3 +1,4 @@
+#tedious file of ranges for each arc
 def arc_name(ep_number):
     if(ep_number<4):
         return "Romance Dawn"
@@ -18,7 +19,7 @@ def arc_name(ep_number):
     elif (ep_number<78):
         return "Little Garden"
     elif (ep_number<92):
-        retu"
+        return "Drum Island"
     elif (ep_number<144):
         return "Alabasta"
     elif (ep_number<153):
@@ -48,7 +49,7 @@ def arc_name(ep_number):
     elif (ep_number<523):
         return "Return to Sabaody"
     elif (ep_number<579):
-        return "
+        return "Fishman Island"
     elif (ep_number<629):
         return "Punk Hazard"
     elif (ep_number<751):
@@ -56,7 +57,7 @@ def arc_name(ep_number):
     elif (ep_number<783):
         return "Zou"
     elif (ep_number<878):
-        return "Wh"
+        return "Whole Cake Island"
     elif (ep_number<890):
         return "Levely"
     elif (ep_number<1032):
