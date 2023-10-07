@@ -1,7 +1,4 @@
 import spacy
-import requests
-import pandas as pd
-import numpy as np
 from spacy.lang.en.stop_words import STOP_WORDS
 from string import punctuation
 from heapq import nlargest
@@ -42,16 +39,7 @@ def summarize(text, per):
     summary=''.join(final_summary)
     return summary
 
-#IT WORKS
-url=''
-page=''
-try:
-    url='https://raw.githubusercontent.com/mirthless7/onePieceSummarizer/main/one-piece-the-book.txt'
-    page = requests.get(url).text
-    print(summarize(page, 0.05))
-except (requests.ConnectionError,requests.Timeout) as exception:
-    print("Internet is off")
-    exit()
+
 
 
 

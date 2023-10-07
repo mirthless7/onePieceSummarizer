@@ -1,13 +1,7 @@
 import pandas as pd
-import numpy as npy
-import scipy as spy
-import pysrt
-import requests
 import os
-import Summarizer_2.py as summa
 import spacy
-import requests
-import pandas as pd
+from Summarizer_2 import summarize
 from spacy.lang.en.stop_words import STOP_WORDS
 from string import punctuation
 from heapq import nlargest
@@ -61,7 +55,10 @@ while True:
     except:
         print("That's not a valid episode number")
         
-tempLowArc='Orange Town'
+
+#   LOOP TO ITERATE THROUGH TEXT
+
+tempLowArc='Orange Town' #PLACEHOLDER
 tempUpArc= 'Arlong Park'
 
 output=' '
@@ -69,7 +66,7 @@ with open('one-piece-the-book.txt', 'r', encoding="utf-8") as book:
     add = False
     for line in book:
         if add == True: 
-            if tempLowArc in line[0:20]:
+            if (tempLowArc or '\n') in line[0:20]:
                 continue
             output = output + line + '\n'
 
@@ -78,7 +75,7 @@ with open('one-piece-the-book.txt', 'r', encoding="utf-8") as book:
         elif tempUpArc in line[0:20]:
             break
 
-print(output)
+print(summarize(output,0.01))
             
         
 
