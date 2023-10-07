@@ -15,7 +15,7 @@ url='https://raw.githubusercontent.com/mirthless7/onePieceSummarizer/main/idkman
 lowB=0;
 upB=1;
 
-print("ONE PIECE SUMMARIZER\n by Ronan Buck, Bryan Levra, and Dmytro Moshkovskyi\n")
+print("ONE PIECE SUMMARIZER\n by Ronan Buck, Bryan Leyva, and Dmytro Moshkovskyi\n")
 
 
 while True:
