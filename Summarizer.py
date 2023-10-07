@@ -1,6 +1,11 @@
 import requests
 from transformers import BartForConditionalGeneration, BartTokenizer
 
+url='https://raw.githubusercontent.com/mirthless7/onePieceSummarizer/main/idkman.txt'
+
+page = requests.get(url)
+print(page.text)
+/*
 # Function to fetch text from a URL
 def fetch_text_from_url(url):
     try:
@@ -10,6 +15,7 @@ def fetch_text_from_url(url):
     except requests.exceptions.RequestException as e:
         print(f"Error fetching data from URL: {e}")
         return None
+*/
 
 # Function to summarize text
 def summarize_text(input_text, max_length=150):
