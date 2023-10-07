@@ -6,23 +6,6 @@ from heapq import nlargest
 
 
 
-#IT WORKS
-url=''
-page=''
-try:
-    url='https://raw.githubusercontent.com/mirthless7/onePieceSummarizer/main/idkman.txt'
-    page = requests.get(url).text
-    print(summarize(page, 0.01))
-    print(summarize(marine,0.1))
-except (requests.ConnectionError,requests.Timeout) as exception:
-    print("Internet is off")
-    exit
-        
-
-marine = 'What the fuck did you just fucking say about me, you little bitch? I will have you know I graduated top of my class in the Navy Seals, and I have been involved in numerous secret raids on Al-Quaeda, and I have over 300 confirmed kills. I am trained in gorilla warfare and I am the top sniper in the entire US armed forces. You are nothing to me but just another target. I will wipe you the fuck out with precision the likes of which has never been seen before on this Earth, mark my fucking words. You think you can get away with saying that shit to me over the Internet? Think again, fucker. As we speak I am contacting my secret network of spies across the USA and your IP is being traced right now so you better prepare for the storm, maggot. The storm that wipes out the pathetic little thing you call your life. You are fucking dead, kid. I can be anywhere, anytime, and I can kill you in over seven hundred ways, and that is just with my bare hands. Not only am I extensively trained in unarmed combat, but I have access to the entire arsenal of the United States Marine Corps and I will use it to its full extent to wipe your miserable ass off the face of the continent, you little shit. If only you could have known what unholy retribution your little clever comment was about to bring down upon you, maybe you would have held your fucking tongue. But you could not, you did not, and now you are paying the price, you goddamn idiot. I will shit fury all over you and you will drown in it. You are fucking dead, kiddo'
-
-
-
 def summarize(text, per):
     nlp = spacy.load('en_core_web_sm')
     doc= nlp(text)
@@ -52,4 +35,20 @@ def summarize(text, per):
     final_summary=[word.text for word in summary]
     summary=''.join(final_summary)
     return summary
+
+#IT WORKS
+url=''
+page=''
+try:
+    url='https://raw.githubusercontent.com/mirthless7/onePieceSummarizer/main/idkman.txt'
+    page = requests.get(url).text
+    print(summarize(page, 0.05))
+except (requests.ConnectionError,requests.Timeout) as exception:
+    print("Internet is off")
+    exit()
+
+
+
+
+
 
