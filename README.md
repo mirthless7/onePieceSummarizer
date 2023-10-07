@@ -2,4 +2,6 @@
 
 #10/7/2023 12:38pm
 
-Summarizes the Bible readings for easy, daily readings that contain more information and teachings in a shorter period of time. Thus making it more accessible for those who want to read the teachings of the Old and New Testaments but live a busy life. This is making use of machine learning libraries to summarize the texts and can be applied to more texts other than the Old and New Testaments.
+Project for Knight Hacks VI Hackathon. Python based project that summarizes the plot of the anime One Piece from a text file. This allows for the plot of One Piece to be understood in a short period of time. It allows for the user to choose which episodes they would like to know the plot of. 
+
+Makes use of Spacy library.
