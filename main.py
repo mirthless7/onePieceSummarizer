@@ -43,22 +43,26 @@ while True:
 
 #   LOOP TO ITERATE THROUGH TEXT
 
-tempLowArc=arc_name(lowB) #PLACEHOLDER
-tempUpArc=arc_name(upB)
+lowArc=arc_name(lowB) #PLACEHOLDER
+upArc=arc_name(upB)
+
+if (lowArc='Not Found' or upArc='Not Found'):
+    print("Episode not found")
+    exit()
 
 output=' '
 with open('one-piece-the-book.txt', 'r', encoding="utf-8") as book:
     add = False
     for line in book:
         if add == True: 
-            if tempLowArc in line[0:20]:
+            if lowArc in line[0:20]:
                 continue
             output = output + line 
 
-        if tempLowArc in line[0:20]:
+        if lowArc in line[0:20]:
             add = True 
 
-        elif tempUpArc in line[0:20]:
+        elif upArc in line[0:20]:
             break
 
 print(summarize(output,0.01))
