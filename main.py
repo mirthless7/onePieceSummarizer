@@ -1,13 +1,8 @@
 import pandas as pd
-import numpy as npy
-import scipy as spy
-import pysrt
-import requests
 import os
-import Summarizer_2.py as summa
 import spacy
-import requests
-import pandas as pd
+from Summarizer_2 import summarize
+from bryanhehe import arc_name
 from spacy.lang.en.stop_words import STOP_WORDS
 from string import punctuation
 from heapq import nlargest
@@ -17,13 +12,11 @@ CATALOGUE = ["Romance Dawn", "Orange Town", "Syrup Village", "Baratie", "Arlong 
             "Post-Enies Lobby", "Thriller Bark","Sabaody Archipelago","Amazon Lily", "Impel Down","Marineford", "Post-War","Return to Sabaody",
             "Fish-Man Island","Punk Hazard","Dressrosa","Zou","Whole Cake Island", "Levely","Wano Country"]
 
-
 #https://dzone.com/articles/how-to-paraphrase-text-in-python-using-nlp-librari#:~:text=In%20Python%2C%20there%20are%20machine,are%20%E2%80%9CDeep%20learning%E2%80%9D%20models.
 
 url='https://raw.githubusercontent.com/mirthless7/onePieceSummarizer/main/idkman.txt'
 
-#page = requests.get(url)
-#print(page.text)
+
 
 lowB=0;
 upB=1;
@@ -41,12 +34,17 @@ while True:
 while True:
     try:
         upB=int(input("Which episode number to end with: "))
+        if upB<=lowB:
+            continue
         break
     except:
         print("That's not a valid episode number")
         
-tempLowArc='Orange Town'
-tempUpArc= 'Arlong Park'
+
+#   LOOP TO ITERATE THROUGH TEXT
+
+tempLowArc=arc_name(lowB) #PLACEHOLDER
+tempUpArc=arc_name(upB)
 
 output=' '
 with open('one-piece-the-book.txt', 'r', encoding="utf-8") as book:
@@ -55,14 +53,15 @@ with open('one-piece-the-book.txt', 'r', encoding="utf-8") as book:
         if add == True: 
             if tempLowArc in line[0:20]:
                 continue
-            output = output + line + '\n'
+            output = output + line 
 
         if tempLowArc in line[0:20]:
             add = True 
+
         elif tempUpArc in line[0:20]:
             break
 
-print(output)
+print(summarize(output,0.01))
             
         
 
@@ -70,7 +69,7 @@ print(output)
 
 #print(output)
 
-def twice(ep_number):
+def arc_name(ep_number):
     if(ep_number>0 and ep_number<4):
         return "Romance Dawn"
     elif (ep_number>3 and ep_number<9):
@@ -145,4 +144,3 @@ def twice(ep_number):
 
 
 
-    
