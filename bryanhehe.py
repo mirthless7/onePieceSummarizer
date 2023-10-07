@@ -61,3 +61,5 @@ def arc_name(ep_number):
         return "Levely"
     elif (ep_number>889 and ep_number<1032):
         return "Wano Country"
+    else:
+        return "Not found"
