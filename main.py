@@ -63,7 +63,16 @@ while True:
     except:
         print("That's not a valid episode number")
         
+tempLowArc='Orange Town'
+tempUpArc= 'Goat Island'
 
+output=' '
+with open('one-piece-the-book.txt', 'r', encoding="utf-8") as book:
+    for line in book:
+        if 'the' in line[0:10]:
+            output = output+line
+
+#print(output)
 def arc_name(ep_number):
     if(ep_number>0 and ep_number<4):
         return "Romance Dawn"
