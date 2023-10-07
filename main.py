@@ -10,7 +10,7 @@ from heapq import nlargest
 CATALOGUE = ["Romance Dawn", "Orange Town", "Syrup Village", "Baratie", "Arlong Park", "Logue Town", "Buggy's Crew Adventure Chronicles", "Warship Island", 
             "Reverse Mountain", "Whisky Peak", "Little Garden", "Drum Island", "Alabasta","Jaya", "Skypiea", "Long Ring Long Land", "Water 7", "Enies Lobby",
             "Post-Enies Lobby", "Thriller Bark","Sabaody Archipelago","Amazon Lily", "Impel Down","Marineford", "Post-War","Return to Sabaody",
-            "Fish-Man Island","Punk Hazard","Dressrosa","Zou","Whole Cake Island", "Levely","Wano Country"]
+            "Fish-Man Island","Punk Hazard","Dressrosa","Zou","Whole Cake Island", "Levely","Wano Country", "746"]
 
 #https://dzone.com/articles/how-to-paraphrase-text-in-python-using-nlp-librari#:~:text=In%20Python%2C%20there%20are%20machine,are%20%E2%80%9CDeep%20learning%E2%80%9D%20models.
 
@@ -26,14 +26,14 @@ print("ONE PIECE SUMMARIZER\n by Ronan Buck, Bryan Leyva, and Dmytro Moshkovskyi
 
 while True:
     try:
-        lowB=int(input("Which episode number to start from: "))
+        lowB=abs(int(input("Which episode number to start from: ")))
         break
     except:
         print("That's not a valid episode number")
     
 while True:
     try:
-        upB=int(input("Which episode number to end with: "))
+        upB=abs(int(input("Which episode number to end with: ")))
         if upB<=lowB:
             continue
         break
@@ -46,7 +46,12 @@ while True:
 lowArc=arc_name(lowB) #PLACEHOLDER
 upArc=arc_name(upB)
 
-if (lowArc='Not Found' or upArc='Not Found'):
+for nextArc in CATALOGUE:
+    if (nextArc==upArc):
+        upArc=nextArc
+        break
+
+if (lowArc=='Not Found' or upArc=='Not Found'):
     print("Episode not found")
     exit()
 
@@ -67,84 +72,3 @@ with open('one-piece-the-book.txt', 'r', encoding="utf-8") as book:
 
 print(summarize(output,0.01))
             
-        
-
-            
-
-#print(output)
-
-def arc_name(ep_number):
-    if(ep_number>0 and ep_number<4):
-        return "Romance Dawn"
-    elif (ep_number>3 and ep_number<9):
-        return "Orange Town"
-    elif (ep_number>8 and ep_number<19):
-        return "Syrup Village"
-    elif (ep_number>18 and ep_number<31):
-        return "Baratie"
-    elif (ep_number>30 and ep_number<45):
-        return "Arlong Park"
-    elif (ep_number>44 and ep_number<62):
-        return "Loguetown"
-    elif (ep_number>61 and ep_number<64):
-        return "Reverse Mountain"
-    elif (ep_number>63 and ep_number<70):
-        return "Whisky Peak"
-    elif (ep_number>69 and ep_number<78):
-        return "Little Garden"
-    elif (ep_number>77 and ep_number<92):
-        return "Drum Island"
-    elif (ep_number>91 and ep_number<144):
-        return "Alabasta"
-    elif (ep_number>143 and ep_number<153):
-        return "Jaya"
-    elif (ep_number>152 and ep_number<207):
-        return "Skypiea"
-    elif (ep_number>206 and ep_number<229):
-        return "Long Ring Long Land"
-    elif (ep_number>228 and ep_number<264):
-        return "Water 7"
-    elif (ep_number>263 and ep_number<313):
-        return "Enies Lobby"
-    elif (ep_number>312 and ep_number<337):
-        return "Post-Enies Lobby"
-    elif (ep_number>336 and ep_number<385):
-        return "Thriller Bark"
-    elif (ep_number>384 and ep_number<406):
-        return "Sabaody Archipelago"
-    elif (ep_number>406 and ep_number<422):
-        return "Amazon Lily"
-    elif (ep_number>421 and ep_number<457):
-        return "Impel Down"
-    elif (ep_number>456 and ep_number<490):
-        return "Marineford"
-    elif (ep_number>489 and ep_number<517):
-        return "Post-War"
-    elif (ep_number>516 and ep_number<523):
-        return "Return to Sabaody"
-    elif (ep_number>522 and ep_number<579):
-        return "Fishman Island"
-    elif (ep_number>578 and ep_number<629):
-        return "Punk Hazard"
-    elif (ep_number>628 and ep_number<751):
-        return "Dressrosa"
-    elif (ep_number>750 and ep_number<783):
-        return "Zou"
-    elif (ep_number>782 and ep_number<878):
-        return "Whole Cake Island"
-    elif (ep_number>876 and ep_number<890):
-        return "Levely"
-    elif (ep_number>889 and ep_number<1032):
-        return "Wano Country"
-    
-    
-
-
-    
-    
-
-
-
-
-
-
