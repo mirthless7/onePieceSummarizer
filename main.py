@@ -2,6 +2,13 @@ import pandas as pd
 import numpy as npy
 import scipy as spy
 import os
+import Summarizer_2.py as summa
+import spacy
+import requests
+import pandas as pd
+from spacy.lang.en.stop_words import STOP_WORDS
+from string import punctuation
+from heapq import nlargest
 
 CATALOGUE = {
     "East Blue": ["Romance Dawn", "Orange Town", "Syrup Village", "Baratie", "Arlong Park", "Logue Town", "Buggy's Crew Adventure Chronicles", "Warship Island"],
@@ -19,7 +26,7 @@ CATALOGUE = {
 
 #https://dzone.com/articles/how-to-paraphrase-text-in-python-using-nlp-librari#:~:text=In%20Python%2C%20there%20are%20machine,are%20%E2%80%9CDeep%20learning%E2%80%9D%20models.
 
-url='https://raw.githubusercontent.com/mirthless7/onePieceSummarizer/main/idkman.txt'
+#url='https://raw.githubusercontent.com/mirthless7/onePieceSummarizer/main/idkman.txt'
 
 #page = requests.get(url)
 #print(page.text)
@@ -27,7 +34,7 @@ url='https://raw.githubusercontent.com/mirthless7/onePieceSummarizer/main/idkman
 
 #https://dzone.com/articles/how-to-paraphrase-text-in-python-using-nlp-librari#:~:text=In%20Python%2C%20there%20are%20machine,are%20%E2%80%9CDeep%20learning%E2%80%9D%20models.
 
-url='https://raw.githubusercontent.com/mirthless7/onePieceSummarizer/main/idkman.txt'
+#url='https://raw.githubusercontent.com/mirthless7/onePieceSummarizer/main/idkman.txt'
 
 #page = requests.get(url)
 #print(page.text)
@@ -72,7 +79,7 @@ with open('one-piece-the-book.txt', 'r', encoding="utf-8") as book:
         elif tempUpArc in line[0:20]:
             break
 
-print(output)
+print(summa.summarize(output, 0.01))
             
         
 
