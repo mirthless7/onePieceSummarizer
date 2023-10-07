@@ -53,6 +53,8 @@ piece={"saga1":["arc1","arc2","arc3","arc4","arc5"],
        "saga4":["arc1","arc2","arc3","arc4","arc5"],
        "saga5":["arc1","arc2","arc3","arc4","arc5"]}
 
+print(piece['saga1'][2])
+if(p)
 
 
 
