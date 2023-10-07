@@ -74,4 +74,4 @@ def init(): # initializes the program for recursion
         init()
 
 init() #executes the program, for recursion if need be
-out = scan("")
+out = input("")
