@@ -33,6 +33,11 @@ while True:
         print("That's not a valid episode number")
         
 
+piece={"saga1":["arc1","arc2","arc3","arc4","arc5"],
+       "saga2":["arc1","arc2","arc3","arc4","arc5"],
+       "saga3":["arc1","arc2","arc3","arc4","arc5"],
+       "saga4":["arc1","arc2","arc3","arc4","arc5"],
+       "saga5":["arc1","arc2","arc3","arc4","arc5"]}
 
 
 
