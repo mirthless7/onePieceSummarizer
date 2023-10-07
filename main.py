@@ -73,9 +73,13 @@ def init(): # initializes the program for recursion
         print("\nERROR: Too much One Piece!\nTry to resize the amount of episodes.\nNote: some arcs are bigger than others.\n")
         init()
 
+    # Allows for user to restart program
+    out = input("Type 'y' to return to start. Type 'n' to exit \n")
+
+    if(out == 'y'):
+        init()    
+
 init() #executes the program, for recursion if need be
 
-out = input("Type 'y' to return to start. Type 'n' to exit \n")
-if(out == 'y'):
-    init()
+
 
