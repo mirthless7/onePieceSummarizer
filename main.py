@@ -74,4 +74,8 @@ def init(): # initializes the program for recursion
         init()
 
 init() #executes the program, for recursion if need be
-out = input("")
+
+out = input("Type 'y' to return to start. Type 'n' to exit \n")
+if(out == 'y'):
+    init()
+
