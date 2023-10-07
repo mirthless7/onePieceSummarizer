@@ -1,4 +1,5 @@
 #Bryan Leyva, Dmytro Moshkovskyi, and Ronan Buck for the UCF Hackathon. 
 
-#10/7/2023 1:10 am
-One Piece episodes are summarized to help anybody catch up on One Piece, and not have to spend 17 days straight without sleep or pausing to catch up on the latest One Piece episode; allowing more time to study and more time to rest our souls.
+#10/7/2023 12:38pm
+
+Summarizes the Bible readings for easy, daily readings that contain more information and teachings in a shorter period of time. Thus making it more accessible for those who want to read the teachings of the Old and New Testaments but live a busy life. This is making use of machine learning libraries to summarize the texts and can be applied to more texts other than the Old and New Testaments.
