@@ -1,14 +1,5 @@
-import pandas as pd
-import os
-import spacy
 from Summarizer_2 import summarize
 from bryanhehe import arc_name
-from spacy.lang.en.stop_words import STOP_WORDS
-from string import punctuation
-from heapq import nlargest
-
-nlp = spacy.load("en_core_web_sm")
-nlp.Defaults.stop_words.add('\n')
 
 CATALOGUE = ["Romance Dawn", "Orange Town", "Syrup Village", "Baratie", "Arlong Park", "Logue Town","Reverse Mountain", "Whisky Peak", "Little Garden", "Drum Island", "Alabasta","Jaya", "Skypiea", "Long Ring Long Land", "Water 7", "Enies Lobby",
             "Post-Enies Lobby", "Thriller Bark","Sabaody Archipelago","Amazon Lily", "Impel Down","Marineford", "Post-War","Return to Sabaody",
@@ -23,20 +14,22 @@ url='https://raw.githubusercontent.com/mirthless7/onePieceSummarizer/main/idkman
 lowB=0
 upB=1
 
-print("ONE PIECE SUMMARIZER\n by Ronan Buck, Bryan Leyva, and Dmytro Moshkovskyi\n")
+print("-------------\nONE PIECE SUMMARIZER\n by Ronan Buck, Bryan Leyva, and Dmytro Moshkovskyi\n")
 
 
 while True:
     try:
-        lowB=abs(int(input("Which episode number to start from: ")))
+        lowB=int(input("What episode number to start from: "))
+        if lowB<1 or lowB>1030:
+            continue
         break
     except:
         print("That's not a valid episode number")
     
 while True:
     try:
-        upB=abs(int(input("Which episode number to end with: ")))
-        if upB<=lowB:
+        upB=int(input("What episode number to end with: "))
+        if upB<=lowB or upB<1 or upB>1031:
             continue
         break
     except:
@@ -57,6 +50,7 @@ if (lowArc=='Not Found' or upArc=='Not Found'):
     print("Episode not found")
     exit()
 
+print("Loading the output, give it a minute...")
 output=' '
 with open('one-piece-the-book.txt', 'r', encoding="utf-8") as book:
     add = False
@@ -74,6 +68,17 @@ with open('one-piece-the-book.txt', 'r', encoding="utf-8") as book:
         elif upArc in line[0:20]:
             break
 
+sumSize=0.01
+if(upB-lowB<5):
+    sumSize = 0.022
+elif(upB-lowB<10):
+    sumSize = 0.018
+elif(upB-lowB<40):
+    sumSize = 0.01
+elif(upB-lowB<100):
+    sumSize = 0.003
+else:
+    sumSize = 0.082
 
-print(f'----------\nONE PIECE SUMMARY:\n\n-- ARCS: {lowArc} to {arc_name(upB)}\n-----------\n{summarize(output,0.01)}\n\n')
+print(f'----------\n-- ONE PIECE SUMMARY\n-- ARCS: {lowArc} to {arc_name(upB)}\n-----------\n{summarize(output,sumSize)}\n------------\n')
             
