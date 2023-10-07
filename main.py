@@ -41,32 +41,34 @@ url='https://raw.githubusercontent.com/mirthless7/onePieceSummarizer/main/idkman
 #print(page.text)
 
 
-vs={'lowBound_page': 0, 'upBound_page': 1,
-    'lowBound_saga': 0, 'lowBound_arc': 0,
-    'upBound_saga': 0, 'upBound_arc':0}
+vs={'lowBound_saga': "", 'upBound_saga': "",
+    'lowBound_arc': "", 'upBound_arc':""}
+lowBound_ep= 0
+upBound_ep=1
 
-
-print("ONE PIECE SUMMARIZER\n by Ronan Buck, Brian Leyva, and Dmytro Moshkovskyi\n")
+print("ONE PIECE SUMMARIZER\nby Ronan Buck, Brian Leyva, and Dmytro Moshkovskyi\n")
 
 
 while True:
     try:
-        lowBound_page=int(input("Which episode number to start from: "))
+        lowBound_ep=int(input("Which episode number to start from: "))
         break
     except:
         print("That's not a valid episode number")
     
 while True:
     try:
-        upBound_page=int(input("Which episode number to end with: "))
+        upBound_ep=int(input("Which episode number to end with: "))
         break
     except:
         print("That's not a valid episode number")
         
 
-
-print(piece['saga1'][2])
-if(p)
+def arc_name(ep_number):
+    arc_name=[]
+    saganame
+    
+    
 
 
 
