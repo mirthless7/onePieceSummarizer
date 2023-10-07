@@ -1,6 +1,8 @@
 import pandas as pd
 import numpy as npy
 import scipy as spy
+import pysrt
+import requests
 import os
 import Summarizer_2.py as summa
 import spacy
@@ -26,7 +28,7 @@ CATALOGUE = {
 
 #https://dzone.com/articles/how-to-paraphrase-text-in-python-using-nlp-librari#:~:text=In%20Python%2C%20there%20are%20machine,are%20%E2%80%9CDeep%20learning%E2%80%9D%20models.
 
-#url='https://raw.githubusercontent.com/mirthless7/onePieceSummarizer/main/idkman.txt'
+url='https://raw.githubusercontent.com/mirthless7/onePieceSummarizer/main/idkman.txt'
 
 #page = requests.get(url)
 #print(page.text)
@@ -34,30 +36,27 @@ CATALOGUE = {
 
 #https://dzone.com/articles/how-to-paraphrase-text-in-python-using-nlp-librari#:~:text=In%20Python%2C%20there%20are%20machine,are%20%E2%80%9CDeep%20learning%E2%80%9D%20models.
 
-#url='https://raw.githubusercontent.com/mirthless7/onePieceSummarizer/main/idkman.txt'
+url='https://raw.githubusercontent.com/mirthless7/onePieceSummarizer/main/idkman.txt'
 
 #page = requests.get(url)
 #print(page.text)
 
+lowB=0;
+upB=1;
 
-vs={'lowBound_saga': "", 'upBound_saga': "",
-    'lowBound_arc': "", 'upBound_arc':""}
-lowBound_ep= 0
-upBound_ep=1
-
-print("ONE PIECE SUMMARIZER\nby Ronan Buck, Brian Leyva, and Dmytro Moshkovskyi\n")
+print("ONE PIECE SUMMARIZER\n by Ronan Buck, Bryan Leyva, and Dmytro Moshkovskyi\n")
 
 
 while True:
     try:
-        lowBound_ep=int(input("Which episode number to start from: "))
+        lowB=int(input("Which episode number to start from: "))
         break
     except:
         print("That's not a valid episode number")
     
 while True:
     try:
-        upBound_ep=int(input("Which episode number to end with: "))
+        upB=int(input("Which episode number to end with: "))
         break
     except:
         print("That's not a valid episode number")
@@ -79,7 +78,7 @@ with open('one-piece-the-book.txt', 'r', encoding="utf-8") as book:
         elif tempUpArc in line[0:20]:
             break
 
-print(summa.summarize(output, 0.01))
+print(output)
             
         
 

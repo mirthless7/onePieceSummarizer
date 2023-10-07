@@ -1,13 +1,17 @@
 import spacy
 import requests
 import pandas as pd
+import numpy as np
 from spacy.lang.en.stop_words import STOP_WORDS
 from string import punctuation
 from heapq import nlargest
 
-
-
-
+'''
+Function designed to summarize the given text with two parameters
+Uses Machine Learning to count most common words and return sentences with most relevant information
+text - is the string of text passed to be summarized
+per - is the percent amount of text to be reduced to, if per = 0.10, the text is reduced to 10%
+'''
 def summarize(text, per):
     nlp = spacy.load('en_core_web_sm')
     doc= nlp(text)
@@ -42,10 +46,9 @@ def summarize(text, per):
 url=''
 page=''
 try:
-    url='https://raw.githubusercontent.com/mirthless7/onePieceSummarizer/main/bible.csv'
-    page = pd.read_csv(url, delimiter='\t')
-    
-    print(summarize(page['quote'].astype(str), 0.01))
+    url='https://raw.githubusercontent.com/mirthless7/onePieceSummarizer/main/one-piece-the-book.txt'
+    page = requests.get(url).text
+    print(summarize(page, 0.05))
 except (requests.ConnectionError,requests.Timeout) as exception:
     print("Internet is off")
     exit()
