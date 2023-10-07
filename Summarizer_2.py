@@ -42,9 +42,10 @@ def summarize(text, per):
 url=''
 page=''
 try:
-    url='https://raw.githubusercontent.com/mirthless7/onePieceSummarizer/main/idkman.txt'
-    page = requests.get(url).text
-    print(summarize(page, 0.05))
+    url='https://raw.githubusercontent.com/mirthless7/onePieceSummarizer/main/bible.csv'
+    page = pd.read_csv(url, delimiter='\t')
+    
+    print(summarize(page['quote'].astype(str), 0.01))
 except (requests.ConnectionError,requests.Timeout) as exception:
     print("Internet is off")
     exit()
