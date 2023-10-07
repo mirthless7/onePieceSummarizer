@@ -1,7 +1,19 @@
+import os
 import pysrt
 
-srt_path='M:\Python\onePieceSummarizer\onePiece_ep'
-def srt_to_txt(srt_path, txt_file_path'):
+def srt_to_txt_folder(input_folder, output_folder):
+    # Iterate over all files in the input folder
+    for filename in os.listdir(input_folder):
+        if filename.endswith(".srt"):
+            srt_file_path = os.path.join(input_folder, filename)
+
+            # Generate corresponding output file path with .txt extension
+            txt_file_path = os.path.join(output_folder, f"{os.path.splitext(filename)[0]}.txt")
+
+            # Convert SRT to TXT
+            srt_to_txt(srt_file_path, txt_file_path)
+
+def srt_to_txt(srt_file_path, txt_file_path):
     # Load the SRT file
     subs = pysrt.open(srt_file_path, encoding='utf-8')
 
@@ -10,8 +22,8 @@ def srt_to_txt(srt_path, txt_file_path'):
         for sub in subs:
             txt_file.write(sub.text + '\n')
 
-if name == "main":
-    srt_file_path = "path/to/your/input_file.srt"
-    txt_file_path = "path/to/your/output_file.txt"
+if __name__ == "__main__":
+    input_folder = "onePiece_ep"
+    output_folder = "onePiece_ep_trans"
 
-    srt_to_txt(srt_file_path, txt_file_path)
+    srt_to_txt_folder(input_folder, output_folder)
