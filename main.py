@@ -70,7 +70,7 @@ print(output)
 
 #print(output)
 
-def arc_name(ep_number):
+def twice(ep_number):
     if(ep_number>0 and ep_number<4):
         return "Romance Dawn"
     elif (ep_number>3 and ep_number<9):
