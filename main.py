@@ -41,24 +41,24 @@ url='https://raw.githubusercontent.com/mirthless7/onePieceSummarizer/main/idkman
 #print(page.text)
 
 
-vs={'lowBound_page': 0, 'upBound_page': 1,
-    'lowBound_saga': 0, 'lowBound_arc': 0,
-    'upBound_saga': 0, 'upBound_arc':0}
+vs={'lowBound_saga': "", 'upBound_saga': "",
+    'lowBound_arc': "", 'upBound_arc':""}
+lowBound_ep= 0
+upBound_ep=1
 
-
-print("ONE PIECE SUMMARIZER\n by Ronan Buck, Brian Leyva, and Dmytro Moshkovskyi\n")
+print("ONE PIECE SUMMARIZER\nby Ronan Buck, Brian Leyva, and Dmytro Moshkovskyi\n")
 
 
 while True:
     try:
-        lowBound_page=int(input("Which episode number to start from: "))
+        lowBound_ep=int(input("Which episode number to start from: "))
         break
     except:
         print("That's not a valid episode number")
     
 while True:
     try:
-        upBound_page=int(input("Which episode number to end with: "))
+        upBound_ep=int(input("Which episode number to end with: "))
         break
     except:
         print("That's not a valid episode number")
@@ -73,6 +73,52 @@ with open('one-piece-the-book.txt', 'r', encoding="utf-8") as book:
             output = output+line
 
 #print(output)
+def arc_name(ep_number):
+    if(ep_number>0 and ep_number<4):
+        return "Romance Dawn"
+    elif (ep_number>3 and ep_number<9):
+        return "Orange Town"
+    elif (ep_number>8 and ep_number<19):
+        return "Syrup Village"
+    elif (ep_number>3 and ep_number<9):
+        return "Orange Town"
+    elif (ep_number>8 and ep_number<19):
+        return "Syrup Village"
+    elif (ep_number>3 and ep_number<9):
+        return "Orange Town"
+    elif (ep_number>8 and ep_number<19):
+        return "Syrup Village"
+    elif (ep_number>3 and ep_number<9):
+        return "Orange Town"
+    elif (ep_number>8 and ep_number<19):
+        return "Syrup Village"
+    elif (ep_number>3 and ep_number<9):
+        return "Orange Town"
+    elif (ep_number>8 and ep_number<19):
+        return "Syrup Village"
+    elif (ep_number>3 and ep_number<9):
+        return "Orange Town"
+    elif (ep_number>8 and ep_number<19):
+        return "Syrup Village"
+    elif (ep_number>3 and ep_number<9):
+        return "Orange Town"
+    elif (ep_number>8 and ep_number<19):
+        return "Syrup Village"
+    elif (ep_number>3 and ep_number<9):
+        return "Orange Town"
+    elif (ep_number>8 and ep_number<19):
+        return "Syrup Village"
+    elif (ep_number>3 and ep_number<9):
+        return "Orange Town"
+    elif (ep_number>8 and ep_number<19):
+        return "Syrup Village"
+    
+    
+
+
+    
+    
+
 
 
 
