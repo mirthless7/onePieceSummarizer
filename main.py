@@ -65,8 +65,48 @@ while True:
         
 
 def arc_name(ep_number):
-    arc_name=[]
-    saganame
+    if(ep_number>0 and ep_number<4):
+        return "Romance Dawn"
+    elif (ep_number>3 and ep_number<9):
+        return "Orange Town"
+    elif (ep_number>8 and ep_number<19):
+        return "Syrup Village"
+    elif (ep_number>3 and ep_number<9):
+        return "Orange Town"
+    elif (ep_number>8 and ep_number<19):
+        return "Syrup Village"
+    elif (ep_number>3 and ep_number<9):
+        return "Orange Town"
+    elif (ep_number>8 and ep_number<19):
+        return "Syrup Village"
+    elif (ep_number>3 and ep_number<9):
+        return "Orange Town"
+    elif (ep_number>8 and ep_number<19):
+        return "Syrup Village"
+    elif (ep_number>3 and ep_number<9):
+        return "Orange Town"
+    elif (ep_number>8 and ep_number<19):
+        return "Syrup Village"
+    elif (ep_number>3 and ep_number<9):
+        return "Orange Town"
+    elif (ep_number>8 and ep_number<19):
+        return "Syrup Village"
+    elif (ep_number>3 and ep_number<9):
+        return "Orange Town"
+    elif (ep_number>8 and ep_number<19):
+        return "Syrup Village"
+    elif (ep_number>3 and ep_number<9):
+        return "Orange Town"
+    elif (ep_number>8 and ep_number<19):
+        return "Syrup Village"
+    elif (ep_number>3 and ep_number<9):
+        return "Orange Town"
+    elif (ep_number>8 and ep_number<19):
+        return "Syrup Village"
+    
+    
+
+
     
     
 
