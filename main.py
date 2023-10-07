@@ -12,22 +12,25 @@ url='https://raw.githubusercontent.com/mirthless7/onePieceSummarizer/main/idkman
 #page = requests.get(url)
 #print(page.text)
 
-lowB=0;
-upB=1;
+
+vs={'lowBound_page': 0, 'upBound_page': 1,
+    'lowBound_saga': 0, 'lowBound_arc': 0,
+    'upBound_saga': 0, 'upBound_arc':0}
+
 
 print("ONE PIECE SUMMARIZER\n by Ronan Buck, Bryan Leyva, and Dmytro Moshkovskyi\n")
 
 
 while True:
     try:
-        lowB=int(input("Which episode number to start from: "))
+        lowBound_page=int(input("Which episode number to start from: "))
         break
     except:
         print("That's not a valid episode number")
     
 while True:
     try:
-        upB=int(input("Which episode number to end with: "))
+        upBound_page=int(input("Which episode number to end with: "))
         break
     except:
         print("That's not a valid episode number")
