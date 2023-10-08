@@ -1,4 +1,4 @@
-#tedious file of ranges for each arc
+#tedious file of ranges for each arc :)
 def arc_name(ep_number):
     if(ep_number<4):
         return "Romance Dawn"
